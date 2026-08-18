@@ -1,1 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="JobHub - Find your next career opportunity">
+  <title>JobHub - Job Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <nav class="navbar container">
+      <a href="#" class="logo"><span>Job</span>Hub</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#jobs">Jobs</a>
+        <a href="#categories">Categories</a>
+        <a href="#about">About</a>
+        <button class="login-btn" id="loginBtn">Login</button>
+      </div>
+    </nav>
+  </header>
 
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-content">
+        <div class="hero-text">
+          <p class="eyebrow">YOUR CAREER STARTS HERE</p>
+          <h1>Find the job that <span>fits your future.</span></h1>
+          <p class="hero-subtitle">Search thousands of opportunities from trusted companies and take the next step in your career.</p>
+
+          <form class="search-box" id="searchForm">
+            <div class="search-field">
+              <span>🔎</span>
+              <input type="text" id="keywordInput" placeholder="Job title, skills or keywords">
+            </div>
+            <div class="search-field location-field">
+              <span>📍</span>
+              <input type="text" id="locationInput" placeholder="City or location">
+            </div>
+            <button type="submit">Search Jobs</button>
+          </form>
+
+          <p class="popular">Popular: <button class="tag-btn">Frontend Developer</button> <button class="tag-btn">JavaScript</button> <button class="tag-btn">UI/UX</button></p>
+        </div>
+
+        <div class="hero-card">
+          <div class="floating-card card-one">
+            <div class="mini-icon">💼</div>
+            <div><strong>12,500+</strong><small>Active Jobs</small></div>
+          </div>
+          <div class="hero-illustration">🚀</div>
+          <div class="floating-card card-two">
+            <div class="avatar">✓</div>
+            <div><strong>Career Match</strong><small>Find your opportunity</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="container stats-grid">
+        <div><strong>12K+</strong><span>Jobs Available</span></div>
+        <div><strong>5K+</strong><span>Companies</span></div>
+        <div><strong>8K+</strong><span>Successful Hires</span></div>
+        <div><strong>98%</strong><span>User Satisfaction</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="jobs">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">EXPLORE OPPORTUNITIES</p>
+            <h2>Featured Jobs</h2>
+          </div>
+          <button class="outline-btn" id="viewAllBtn">View All Jobs →</button>
+        </div>
+
+        <div class="job-layout">
+          <aside class="filters">
+            <h3>Filter Jobs</h3>
+            <label>Job Type</label>
+            <label class="check"><input type="checkbox" value="Full Time" class="type-filter"> Full Time</label>
+            <label class="check"><input type="checkbox" value="Part Time" class="type-filter"> Part Time</label>
+            <label class="check"><input type="checkbox" value="Internship" class="type-filter"> Internship</label>
+            <label class="check"><input type="checkbox" value="Remote" class="type-filter"> Remote</label>
+
+            <label class="filter-title">Experience</label>
+            <select id="experienceFilter">
+              <option value="all">All levels</option>
+              <option value="Entry">Entry Level</option>
+              <option value="Mid">Mid Level</option>
+              <option value="Senior">Senior Level</option>
+            </select>
+
+            <button class="clear-btn" id="clearFilters">Clear Filters</button>
+          </aside>
+
+          <div class="jobs-area">
+            <div class="results-bar"><span id="resultCount">6 jobs found</span><select id="sortSelect"><option value="default">Sort: Recommended</option><option value="salary">Salary: High to Low</option></select></div>
+            <div class="jobs-grid" id="jobsGrid"></div>
+            <p class="no-results" id="noResults">No jobs found. Try different filters.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section categories" id="categories">
+      <div class="container">
+        <div class="section-heading centered">
+          <div><p class="eyebrow">FIND YOUR FIELD</p><h2>Popular Categories</h2></div>
+        </div>
+        <div class="category-grid">
+          <button class="category-card" data-category="Technology"><span>💻</span><strong>Technology</strong><small>2,450 Jobs</small></button>
+          <button class="category-card" data-category="Design"><span>🎨</span><strong>Design</strong><small>1,120 Jobs</small></button>
+          <button class="category-card" data-category="Marketing"><span>📈</span><strong>Marketing</strong><small>980 Jobs</small></button>
+          <button class="category-card" data-category="Finance"><span>💰</span><strong>Finance</strong><small>760 Jobs</small></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="about">
+      <div class="container cta-box">
+        <div><p class="eyebrow">FOR JOB SEEKERS</p><h2>Ready to grow your career?</h2><p>Create your profile, discover matching jobs and apply in minutes.</p></div>
+        <button id="createProfileBtn">Create Profile</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div><a href="#" class="logo"><span>Job</span>Hub</a><p>Connecting talented people with great opportunities.</p></div>
+      <div><h4>Quick Links</h4><a href="#home">Home</a><a href="#jobs">Jobs</a><a href="#categories">Categories</a></div>
+      <div><h4>Contact</h4><p>support@jobhub.example</p><p>+91 90000 00000</p></div>
+    </div>
+    <div class="copyright">© 2026 JobHub. Built as a portfolio project.</div>
+  </footer>
+
+  <div class="modal hidden" id="modal">
+    <div class="modal-box">
+      <button class="close-btn" id="closeModal">×</button>
+      <h2 id="modalTitle">Login to JobHub</h2>
+      <p>Demo form for this portfolio project.</p>
+      <input type="email" placeholder="Email address">
+      <input type="password" placeholder="Password">
+      <button class="primary-btn" id="modalAction">Continue</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
